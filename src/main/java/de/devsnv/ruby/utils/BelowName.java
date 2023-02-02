@@ -4,29 +4,29 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.reflect.StructureModifier;
+import com.comphenix.protocol.wrappers.WrappedDataWatcher;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class BelowName {
 
-    private static void sendBelowName(Player player, String text) throws Exception{
-        PacketContainer BelowNamePacket = new PacketContainer(PacketType.Play.Server.SCOREBOARD_DISPLAY_OBJECTIVE);
-
-
-
-
-
-
+    public static void sendBelowName(Player player, String text) throws Exception{
+        PacketContainer packet = new PacketContainer(PacketType.Play.Server.SCOREBOARD_DISPLAY_OBJECTIVE);
+        player.sendMessage("1");
+        packet.getStrings().write(2, "TEST");
+        player.sendMessage("2");
         for(Player all : Bukkit.getServer().getOnlinePlayers()){
-            ProtocolLibrary.getProtocolManager().sendServerPacket(all, BelowNamePacket, false);
+            all.sendMessage("3");
+            ProtocolLibrary.getProtocolManager().sendServerPacket(all, packet);
         }
     }
 
-    private static void changeBelowName(Player player, String text){
+
+    public static void changeBelowName(Player player, String text) {
 
     }
 
-    private static void removeBelowName(Player player){
+    public static void removeBelowName(Player player){
 
     }
 }
