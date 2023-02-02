@@ -3,8 +3,8 @@ version: '${project.version}'
 main: de.devsnv.ruby.test.Test
 api-version: 1.19
 description: A Test plugin for Rubymc
-depend:
-  - ProtocolLib
+depend: [ ProtocolLib ]
 
 commands:
-  test:
+  nametag:
+  belowname:
