@@ -1,0 +1,10 @@
+name: Test
+version: '${project.version}'
+main: de.devsnv.ruby.test.Test
+api-version: 1.19
+description: A Test plugin for Rubymc
+depend:
+  - ProtocolLib
+
+commands:
+  test:
