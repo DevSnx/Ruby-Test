@@ -13,6 +13,8 @@ public class BelowName {
     public static void sendBelowName(Player player, String text) throws Exception{
         PacketContainer packet = new PacketContainer(PacketType.Play.Server.SCOREBOARD_DISPLAY_OBJECTIVE);
         player.sendMessage("1");
+        packet.getStrings().write(0, "1");
+        packet.getStrings().write(1, "2");
         packet.getStrings().write(2, "TEST");
         player.sendMessage("2");
         for(Player all : Bukkit.getServer().getOnlinePlayers()){
