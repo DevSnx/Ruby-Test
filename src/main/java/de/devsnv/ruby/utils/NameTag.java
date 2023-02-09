@@ -18,10 +18,6 @@ public class NameTag {
 
     public static void sendNameTag(Player player, String text) throws FieldAccessException, InvocationTargetException {
         PacketContainer packet = new PacketContainer(PacketType.Play.Server.SCOREBOARD_OBJECTIVE);
-
-
-
-
         player.sendMessage("1");
         packet.getStrings().write(0, text.replace("&", "§"));
         player.sendMessage("2");
